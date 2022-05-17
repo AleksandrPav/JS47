@@ -670,4 +670,74 @@
 //     friendCount: 20,
 //   }),
 // );
-// ```
+// Модуль 3 задача 41/41
+// + 1. Якщо зілля, що додається, вже є в масиві `potions`, метод `addPotion` повертає рядок з текстом з вихідного коду.
+// + 4. Якщо зілля, що додається, вже є в масиві `potions`, метод `addPotion` не додає в нього переданий об'єкт.
+// + 2. Для вихідного об'єкта виклик `atTheOldToad.addPotion({ name: 'Stone skin', price: 240 })`, повертає рядок `'Error! Potion Stone skin is already in your inventory!'`.
+// + 3. Для вихідного об'єкта виклик `atTheOldToad.addPotion({ name: 'Dragon breath', price: 700 })`, повертає рядок `'Error! Potion Dragon breath is already in your inventory!'`.
+// + 5. Для вихідного об'єкта після виклику `atTheOldToad.addPotion({ name: 'Dragon breath', price: 700 })`, массив `potions` не змінюється.
+// + 6. Для вихідного об'єкта після виклику методу `atTheOldToad.removePotion('Dragon breath')`, у властивості `potions` буде масив `[ { name: 'Speed potion', price: 460 },
+// { name: 'Stone skin', price: 520 } ]`
+// + 7. Для вихідного об'єкта після виклику методу `atTheOldToad.removePotion('Speed potion')`, у властивості `potions` буде масив `[ { name: 'Dragon breath', price: 780 },
+// { name: 'Stone skin', price: 520 }]`
+
+
+// 8. Для вихідного об'єкта після виклику методу `atTheOldToad.updatePotionName('Dragon breath', 'Polymorth')`, у властивості `potions` буде масив `[{ name: 'Speed potion', price: 460 },
+// { name: 'Polymorth', price: 780 }, { name: 'Stone skin', price: 520 } ]`
+// 9. Для вихідного об'єкта після виклику методу `atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion')`,
+//у властивості `potions` буде масив`[{ name: 'Speed potion', price: 460 }, { name: 'Dragon breath', price: 780 }, { name: 'Invulnerability potion', price: 520 } ]`
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//    const { potions } = this;
+//     let message = `Error! Potion ${newPotion.name} is already in your inventory!`;
+//         for (let i = 0; i < potions.length; i += 1){
+//             if (potions[i].name === newPotion.name) {
+//                 return message;
+//             }
+//         }
+//         this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     const { potions } = this;
+//         for (let i = 0; i < potions.length; i += 1) {
+//             const { name } = potions[i]
+//             if (potionName === name) {
+//                 this.potions.splice(i, 1);
+//             }
+//         }
+//         return `Potion ${potionName} is not in inventory!`;
+//   },
+//    updatePotionName(oldName, newName) {
+//       const { potions } = this;
+      
+//       for (let i = 0; i < potions.length; i += 1) {
+//           const { name } = potions[i];
+//             if (name === oldName) {
+//                   this.potions.name = newName;
+//           }
+//           return `Potion ${newName} is not in inventory!`;
+//         }
+       
+       
+//   },
+//   // Change code above this line
+// };
+
+// console.log(atTheOldToad.updatePotionName('Dragon breath', 'Polymorth'));
+//  for(let potion of this.potions){
+//       if(potion.name === oldName.name){
+//         potion.push(newName);
+//       }
+//     }
+
+// Колбек-функція
